@@ -1,0 +1,18 @@
+<div id="homeBanner">			
+	<div id="bannerText">
+		I'm <div id="cursive">Pankaj Kumar</div>,<br> Engg Student &amp; Developer<br>From 
+		<font color="#843D95">INDIA</font>
+	</div>		
+</div>	
+
+<script type="text/javascript">
+  var top = $('.navbar').offset().top - parseFloat($('.navbar').css('margin-top').replace(/auto/, 0));
+    $(window).scroll(function(event) {
+        var y = $(this).scrollTop();
+        if (y < 510 ) {
+            $('.navbar').removeClass('hidden');
+        } else {
+	    $('.navbar').addClass('hidden');
+        }
+    });
+</script>
