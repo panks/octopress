@@ -5,7 +5,7 @@ date: 2013-01-06 03:50
 comments: true
 categories: [octopress, theme, fabric]
 ---
-Somehow I got interested in octopress while I was at home during winter vacation. I tried few themes from <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">octopress wiki</a> there are some pretty nice ones out there, but just out of curiosity I ended up writing a theme on my own - <a href="https://github.com/panks/fabric">Fabric</a>. This website uses the latest version of this theme, so you can play around with it here without having to install.
+Somehow I got interested in octopress while I was at home during winter vacation. I tried few themes from <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">octopress wiki</a> there are some pretty nice ones out there, but just out of curiosity I ended up writing a theme on my own - <a href="https://github.com/panks/fabric">Fabric</a>. This page (not this website) uses this theme, so you can play around with it here without having to install.
 
 I share some of the installation details and functionality here:
 
