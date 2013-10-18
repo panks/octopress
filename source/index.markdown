@@ -36,10 +36,7 @@ source: [xkcd](http://xkcd.com/)</center><br>
 
 
 <p><list>
-<li>Email: <script type="text/javascript"><!--
-var csxnfqv = ['a','e','>',' ','e','a','t',' ','m','r','m','=','n','k','f','.','k','<','l','e','=','e','@','n','m','a','l','"','m','"','e','h','@','s','l','s','m','c','a','a','.','s','>','i','<','a','i','o','e','m',':','"','s','p','/','"','p','a'];var bqcursz = [1,53,42,28,17,10,13,2,25,4,37,34,48,22,6,24,49,0,12,36,7,44,18,21,9,47,40,27,16,8,26,3,45,23,30,50,52,29,38,31,51,33,57,39,54,56,11,14,5,43,15,35,32,19,55,41,46,20];var yijyylv= new Array();for(var i=0;i<bqcursz.length;i++){yijyylv[bqcursz[i]] = csxnfqv[i]; }for(var i=0;i<yijyylv.length;i++){document.write(yijyylv[i]);}
-// --></script>
-<noscript>Please enable Javascript to see the email address</noscript>
+<li>Email: panks [at] domain of this website
 </li>
 <li>Facebook: <a href="http://facebook.com/panks.cogito">panks.cogito</a></li>
 <li>Twitter: <a href="http://twitter.com/pankajxdx">pankajxdx</a></li>
