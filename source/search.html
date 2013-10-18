@@ -12,7 +12,7 @@ layout: default
 </div>
 <script>
          $('#search_results').tapir({
-             'token': '50e03b6e3f61b0160000014d',
+             'token': '{{ site.tapir_token }}',
              'complete' : function() { document.getElementById('search_loading').style.display="none"; }
          });
 </script>
