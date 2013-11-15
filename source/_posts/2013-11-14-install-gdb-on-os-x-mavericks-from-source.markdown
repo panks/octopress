@@ -98,7 +98,7 @@ Now quit Keychain Access application and restart `taskgated` process by killing 
 
 Now to sign the certificate you can run
 
-    codesign -s gdbc gdb
+    codesign -fs gdbc /usr/local/bin/gdb
 
 but it will ask for an administrative username and it's password. You need to enable `root` user to do so.
 
@@ -129,7 +129,7 @@ but it will ask for an administrative username and it's password. You need to en
 ##The End
 Now just run the following command to sign the certificate, enter username as `root` and it's password and you are done.
 
-    codesign -s gdbc gdb
+    codesign -fs gdbc /usr/local/bin/gdb
 
 Live long and prosper
 
