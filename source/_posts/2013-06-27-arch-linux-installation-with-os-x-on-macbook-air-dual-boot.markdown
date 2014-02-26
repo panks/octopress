@@ -7,30 +7,27 @@ categories: [arch, linux, macbook, os x]
 ---
 <center><img class="noborder" src="/images/posts/arch-apple_logo.png"></center>   
 
-Second day and finally now I can Dual boot my Macbook Air with <a href="https://www.archlinux.org">Arch Linux</a> and OS X (Mountain lion). Moments of happiness :D
-If you are a Windows user you probably landed up in this post by mistake, I would recommend you to type <a href="http://google.com">http://google.com</a> in your URL bar and fill in whatever coolest thing you can think of and press <strong>I&#8217;m feeling lucky</strong> button.</p>
+<p>Second day and finally now I can Dual boot my Macbook Air with <a href="https://www.archlinux.org">Arch Linux</a> and OS X (Mountain lion). Moments of happiness :D
+If you are a regular Windows user the rest of the article would probably be of no use (also boring may be) to you, so I recommend you check out my other posts.</p>
+
+<p>Phew.. So with Windows fan gone, lets go on to the next level, if you have been a Linux user for a while using Linux in a virtual machine or one of those <a href="http://www.ubuntu.com/about/about-ubuntu/derivatives">[<strong>fillAnyThingHere</strong>]untus</a> then you must be wondering why I wrote this post, as Linux installation unlike in 90s is pretty straight forward nowadays.</p>
 
 <!--more-->
 
 
-<p>Phew.. So with Windows fan gone, lets go on to the next level, if you have been a Linux user for a while using Linux in a virtual machine or one of those <a href="http://www.ubuntu.com/about/about-ubuntu/derivatives">[<strong>fillAnyThingHere</strong>]untus</a> then you must be wondering why I wrote this post, as Linux installation unlike in 90s is pretty straight forward nowadays. So just to put some light, I was using Ubuntu(and it&#8217;s variants) since last few years, but as they started adding lots and lots of bells and whistles to it, just to attracted the newly migrated (Windows) users, it turned into an ugly OS which takes few seconds just to open the unity launcher(or whatever fancy name they gave it), one more reason as to why I stuck to these *untus was because we have a clone of Ubuntu&#8217;s repository in our local server at my college so installing anything was just a matter of seconds. Getting irritated (read Saturated if you are a *untu user) I finally decided to make a switch to Arch Linux. Which is a bare bone GNU/Linux OS which come with minimal set of packages and you add everything on your own whatever you wish to, a true DIY OS. Arch FTW! :D</p>
+<p>So just to put some light, I was using Ubuntu(and it&#8217;s variants) since last few years, but as they started adding lots and lots of bells and whistles to it, just to attracted the newly migrated (Windows) users, it turned into an ugly OS which takes few seconds just to open the unity launcher(or whatever fancy name they gave it).</p>
 
-<p>But there was cost to it, once I made the switch I would be accessing package repositories at my internet speed (which is usually pathetic in my college), so I kept procrastinating it, but finally while my internship at Microsoft India (writing this post from my cabin right now) I got a good internet bandwidth and finally made the switch.</p>
+<p>Check out this video on <a href="http://www.youtube.com/watch?v=Sh-cnaJoGCw">Why Linux (read Ubuntu) Sucks</a>, just for fun.</p>
 
-<p>Unlike those *untus the process of installing Arch Linux (I&#8217;m talking about Dual boot here, not just Arch on your entire hard disk) on Macbook Air is not just a &#8216;Press Next&#8217; process. You have to configure everything on your own starting from hard disk partition and type to your networking and even bootloader.
+<p>One more reason as to why I got stuck to these -untus was because we have a clone of Ubuntu&#8217;s repository in our local server at my college so installing anything was just a matter of seconds. Getting irritated (read Saturated if you are a -untu user) I finally decided to make a switch to Arch Linux. Which is a bare bone GNU/Linux OS which come with minimal set of packages and you add everything on your own whatever you wish to, a true DIY OS. Arch FTW! :D</p>
+
+
+<p><del>But there was cost to it, once I made the switch I would be accessing package repositories at my internet speed (which is usually pathetic in my college),</del> (My college got Arch repo mirror finally, <a href="ftp://ftp.iitm.ac.in/archlinux">ftp://ftp.iitm.ac.in/archlinux</a>) so I kept procrastinating it, but finally while my internship at Microsoft India (writing this post from my cabin right now) I got a good internet bandwidth and finally made the switch.</p>
+
+<p>Unlike those -untus the process of installing Arch Linux (I&#8217;m talking about Dual boot here, not just Arch on your entire hard disk) on Macbook Air is not just a &#8216;Press Next&#8217; process. You have to configure everything on your own starting from hard disk partition and type to your networking and even bootloader.
 It took me two days to get it the way I wanted. So I thought I would document it down for the <a href="http://xkcd.com/979/">people from the future</a>.</p>
 
 <p>Before I start I would like to point it out that <a href="https://wiki.archlinux.org/index.php/Beginners'_Guide">Arch Linux&#8217;s wiki</a> is one of the best documentations out there, though some people might argue that Gentoo has the best documentation, to which I won&#8217;t disagree. So read it up, have it at your side while installation, it&#8217;s THE Bible.</p>
-
-<h2>Making up the space</h2>
-
-<ul>
-<li>Boot in to OS X</li>
-<li>Open/Run <strong>Disk Utility</strong> app</li>
-<li>Select your hard drive and shrink mac partition to the desired size and make some free space</li>
-<li>Click <strong>Apply</strong></li>
-</ul>
-
 
 <h2>Prepare the USB for booting</h2>
 
@@ -56,7 +53,9 @@ It took me two days to get it the way I wanted. So I thought I would document it
 
 <p>It would list you existing partion, don&#8217;t mess up with the Mac partition (there would be 3, normally) just use the free space and create 4 new partition (You can create more, I used same partion for root and home and had a swap partition).</p>
 
-<p>Press down arrow key to select the free space and create new partitions. Make the following 4 partitions:</p>
+<p>Press down arrow key to select the free space and create new partitions, leave a free space of at least 128MB after Mac partitions before making the first partition.
+
+Make the following 4 partitions:</p>
 
 <pre><code>Size            Partition Type          Partition Name
 
@@ -70,7 +69,11 @@ Rest of space   Linux filesystem        Root
 
 <h2>Keep the network ready</h2>
 
-<p>As you are gonna download lot many packages you need to be online, so plugin your ethernet cable via adapter. Or you can do USB tethering from your smartphone. To connect wireless network, prepare and copied the b43 firmware to /lib/firmware and rmmod b43 &amp;&amp; modprobe b43. Then run wifi-menu to connect to WIFI.</p>
+<p>As you are gonna download lot many packages you need to be online, so plugin your ethernet cable via adapter. Or you can do USB tethering from your smartphone. 
+
+To connect to WiFi network run <code>wifi-menu</code>
+
+</p>
 
 <p>To check run:</p>
 
@@ -132,7 +135,7 @@ echo LANG=en_US.UTF8 &gt; /etc/locale.conf
 export LANG=en_US.UTF-8
 </code></pre>
 
-<p>Modify your /etc/mkinitcpio.conf file to insert &#8220;keyboard&#8221; after &#8220;autodetect&#8221; in the HOOK section.
+<p>Modify your <strong>/etc/mkinitcpio.conf</strong> file to insert <code>keyboard</code> after <code>autodetect</code> in the <strong>HOOK</strong> section.
 Then run:</p>
 
 <pre><code>mkinitcpio -p linux
@@ -149,14 +152,12 @@ Then run:</p>
 
 <p>change <strong>/etc/default/grub</strong> to look like</p>
 
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT="quiet rootflags=data=writeback"`
-</code></pre>
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT="quiet rootflags=data=writeback"</code></pre>
 
 <p>Now generate <strong>boot.efi</strong> with GRUB</p>
 
 <pre><code>grub-mkconfig -o boot/grub/grub.cfg
-grub-mkstandalone -o boot.efi -d usr/lib/grub/x86_64-efi -O x86_64-efi -C xz boot/grub/grub.cfg
-</code></pre>
+grub-mkstandalone -o boot.efi -d usr/lib/grub/x86_64-efi -O x86_64-efi -C xz boot/grub/grub.cfg</code></pre>
 
 <p>Now <strong>boot.efi</strong> would be present in the current directly (or somewhere else if you changed the path in the command above), copy it somewhere.</p>
 
@@ -169,6 +170,12 @@ cp boot.efi /mnt/usbdisk/
 </code></pre>
 
 <p>Or you can SCP it to some other computer (for SSH you need to install <strong>openssh</strong> package).</p>
+
+If you only have WiFi at your disposal and don't have an ethernet then you might wanna install the following packages before rebooting for the WiFi to work on reboot:
+
+    yum install iw wireless_tools wpa_supplicant dialog
+
+also install `networkmanager` and enable it using `NetworkManager.service`. Read [Arch wiki](https://wiki.archlinux.org/index.php/NetworkManager) for more info.
 
 <h2>Reboot (Back to the Mac world)</h2>
 
@@ -300,9 +307,9 @@ systemctl enable acpid
 </ul>
 
 
-<h3>rEFIt</h3>
+<h3>rEFInd</h3>
 
-<p>If you find this whole business of holding &#8216;alt/option&#8217; key for few seconds on system start to choose OS irritation, then you can install <a href="http://refit.sourceforge.net/">rEFIt</a> it would present you with a nice GUI on system start where you can choose which OS to boot.</p>
+<p>If you find this whole business of holding &#8216;alt/option&#8217; key for few seconds on system start to choose OS irritation, then you can install <a href="http://www.rodsbooks.com/refind/">rEFInd</a> it would present you with a nice GUI on system start where you can choose which OS to boot.</p>
 
 <h2>Install Application</h2>
 
