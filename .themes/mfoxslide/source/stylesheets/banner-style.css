@@ -12,6 +12,7 @@ background-attachment:fixed;
 background-position:center top;	
 background-color: #132b2b;
 background-image: url('../images/heroBack.jpg');
+background-size: 100%;
 }
 
 #bannerText {
