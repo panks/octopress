@@ -9,6 +9,12 @@
       {% endfor %}
     </ul>
     <h2><a href="/blog/archives">archives</a></h2>
+    <form class="navbar-form" action="http://google.com/search" method="get">
+      <fieldset role="search">
+        <input type="hidden" name="q" value="site:panks.me" />
+        <input class="span3" type="text" name="q" results="0" placeholder="Search"/>
+      </fieldset>
+    </form>
   </div>
   <div class="span3">
     {% include custom/asides/instagram.html %}
